@@ -11,9 +11,11 @@ render() {
       //looping through all directory to display it
       let list = (
           this.props.directory.map(
+           
               (detail) => {
+              
                 return(
-            <div className='list '>
+            <div   key={detail.phone&&detail.name} className='list '>
                 <div>{detail.name}</div>
                 <div>{detail.phone}</div>
                 <div className='btn red width-6' 
