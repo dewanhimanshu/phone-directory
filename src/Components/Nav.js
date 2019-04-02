@@ -4,7 +4,7 @@ import './navbar.css'
 const navbar = ( props ) => {
     return (
         <div className="nav">
-           PHONE DIRECTORY
+          {props.children}
         </div>
     )
 };

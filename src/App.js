@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import Landing from '../src/Components/Landing';
 import Nav from '../src/Components/Nav'
@@ -9,23 +8,21 @@ import {createStore} from 'redux'
 import reducer from './Store/reducer'
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 
-
+//creating store for redux
 const store = createStore(reducer);
 
 class App extends Component {
   render() {
     return (
       <Provider store={store}>
-      <div className="App">
-      <BrowserRouter>
-      <Route path={['/','/add']} component={Nav} /> 
-      <Switch>
-        <Route exact path="/" component={Landing} />
-        <Route path="/add" component={Form}  />
-      </Switch>
+        <BrowserRouter>
+          <Route path={['/','/add']} component={Nav} /> 
+            <Switch>
+              <Route exact path="/" component={Landing} />
+              <Route path="/add" component={Form}  />
+        </Switch>
         </BrowserRouter>
-      </div>
-      </Provider>
+       </Provider>
     );
   }
 }

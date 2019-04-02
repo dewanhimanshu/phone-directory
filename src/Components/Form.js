@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux'
 import * as actionTypes from '../Store/action'
+import './Form.css'
+import Nav from './Nav'
+
 class Form extends Component {
   state={
     name:'',
     phone:''
   }
-  componentDidMount(){
-    console.log(this.props)
-  }
+  
  
   onChange = e => this.setState({ [e.target.name]: e.target.value })
 
@@ -17,32 +18,36 @@ class Form extends Component {
     this.props.history.push('/')
   
   }
+  onBackHandler = () => {
+    this.props.history.goBack();
+  }
   
   render() {
     return (
-      <div>
+     <div>
+        <Nav>ADD SUBSCRIBER</Nav>
+        <div class="form">
+        <div  className='back-btn'onClick={this.onBackHandler}>Back</div>
 
-          <div>Name</div>
+          <div className='label'>Name:</div>
           <input name='name' onChange={this.onChange}  value={this.name} />
 
-          <div>Phone</div>
+          <div className='label'>Phone:</div>
           <input name='phone' onChange={this.onChange} value={this.phone}  />
-
-          <button onClick={this.onSubmitHandler}>Submit</button>
+            <br/>
+            <br/>
+          <div class='label bold'>Subscriber to be Added</div>
+          <div>Name:{this.state.name}</div>
+          <div>Phone:{this.state.phone}</div>
+          <div className='btn green submit-btn' onClick={this.onSubmitHandler}>Add</div>
           
-          <div>{this.state.name}</div>
-          <div>{this.state.phone}</div>
-          
+      </div>
       </div>
     );
   }
 }
 
-const mapStateToProps = (state) => {
-  return{
 
-  }
-}
 const mapDispatchToProps = (dispatch) => {
   return{
     onSubmit:(details) => dispatch({

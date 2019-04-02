@@ -1,37 +1,22 @@
 import React, { Component } from 'react';
-import { BrowserRouter, Switch, Route ,Link} from 'react-router-dom'
-import Form from '../Components/Form'
+import {Link} from 'react-router-dom'
 import {connect} from 'react-redux'
 import './Landing.css'
 import * as actionTypes from '../Store/action'
+import Nav from './Nav'
 
 class Landing extends Component {
 
-
-
-onSubmit = (details) =>{
-    console.log(details)
-    const newDirectory = {...this.state.directory,details}
-    this.setState({
-        directory:newDirectory
-    })
-    
-}
-handleForm  = () => {
-  
-}
-
-
-  render() {
+render() {
       //looping through all directory to display it
       let list = (
           this.props.directory.map(
               (detail) => {
                 return(
-            <div>
+            <div className='list '>
                 <div>{detail.name}</div>
                 <div>{detail.phone}</div>
-                <div className='btn red' 
+                <div className='btn red width-6' 
                 onClick={()=>{this.props.onDelete(detail)}} >
                     Delete
                 </div>
@@ -42,17 +27,17 @@ handleForm  = () => {
       )
     return (
     <div>
-        <div className='btn green'>
-            <Link to='/add'>Add</Link>
-        </div>
-        <div className='list'>
-            <span>NAME</span>
-            <span>PHONE</span>
-        </div>
-      <div>
+          <Nav>PHONE DIRECTORY</Nav>
+            <Link to='/add'><div className='btn green'>Add</div></Link>
         
-      </div>
-        {list}
+        <div className='list'>
+            <div>NAME</div>
+            <div>PHONE</div>
+        </div>
+        <div>
+            {list}
+        </div>
+        
     </div>
     );
   }

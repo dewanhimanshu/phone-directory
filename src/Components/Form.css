@@ -1,0 +1,27 @@
+.form{
+    margin-left: 2%;
+}
+.back-btn{
+    margin:1em;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+    
+    display: inline-block;
+    padding: 1em;
+}
+.label{
+    font-size: 20px;
+    opacity: 0.6;
+}
+input{
+    height: 1.6em;
+     
+}
+.submit-btn{
+    margin-top:4em;
+}
+.bold{
+    opacity: 0.9;
+    font-weight: 600;
+    font-size: 24px;
+}
