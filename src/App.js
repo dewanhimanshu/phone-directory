@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
 import Landing from '../src/Components/Landing';
-import Nav from '../src/Components/Nav'
 import Form from './Components/Form'
 import {Provider} from 'react-redux'
 import {createStore} from 'redux'
@@ -16,7 +15,7 @@ class App extends Component {
     return (
       <Provider store={store}>
         <BrowserRouter>
-          <Route path={['/','/add']} component={Nav} /> 
+     
             <Switch>
               <Route exact path="/" component={Landing} />
               <Route path="/add" component={Form}  />
