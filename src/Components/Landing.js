@@ -15,7 +15,7 @@ render() {
               (detail) => {
               
                 return(
-            <div   key={detail.phone&&detail.name} className='list '>
+            <div   key={detail.phone+detail.name} className='list '>
                 <div>{detail.name}</div>
                 <div>{detail.phone}</div>
                 <div className='btn red width-6' 

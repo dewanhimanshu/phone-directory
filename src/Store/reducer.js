@@ -16,7 +16,7 @@ const reducer = (state=initalState,action)=>{
         case actionTypes.DELETE_USER:
             const updateddirectory = state.directory.filter(
                 (detail)=>{
-                    return detail.name!==action.data.name && detail.phone!==action.data.phone
+                    return detail.name!==action.data.name || detail.phone!== action.data.phone
                 }
             )
             return{
